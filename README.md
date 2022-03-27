@@ -49,29 +49,37 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the **Jump Box** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+  - **69.245.220.158**
+  - **68.74.233.250**
+  - **99.45.122.90**
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by **the Jump Box**.
+  -  Jump Box
+    -  **Public IP: 13.64.193.107**
+    - **Private IP: 10.0.0.4**
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name     | Publicly Accessible | Allowed IP Addresses    |
+|----------|---------------------|-------------------------|
+| Jump Box | Yes                 | 10.0.0.4                |
+| Web1,2,3 | No                  | Web LB - 52.160.162.222 |
+| Web LB   | Yes - HTTP          | *                       |
+| ELK      | Yes - Kibana - 5601 | *                       |
+| ELK      | SSH - No - 22       | 99.45.122.90            |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+  - Ansible automation helps considerably with the representation of infrastructure as code (IAC). It allows for full automation of a specific server and reduces configuration errors. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+-** Install Docker: Installs the core docker code to the remote server 
+- Install Python3_pip: Pip is an installation module to allow additional docker modules to be installed.  
+- Docker Module: Tells the previous PIP module to install the necessary docker component modules. 
+- Increase Memory/Use More Memory: This helps fix the limited memory issue of the ELK Docker image.  
+- Download and Launch ELK Container: Downloads the ELK Docker container and initializes it with the specified published ports.**  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
