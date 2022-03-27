@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![CybersecurityP1/Images](https://github.com/slichtfuss/CybersecurityP1/blob/main/Images/FullNetwork.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **Host** file may be used to install only certain pieces of it, such as Filebeat.
 
   - [Elk_Install](https://github.com/slichtfuss/CybersecurityP1/blob/main/Ansible/elk_install.yml)
   - [DVWA](https://github.com/slichtfuss/CybersecurityP1/blob/main/Ansible/dvwa_playbook.yml)
@@ -26,8 +26,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- Load balancing is an important application that protects organizations from Denial of Service Attacks (DDoS). They will evenly distribute traffic among all servers     that are connected to it.
+- A Jump Box allows for greater control over network access. In order to gain access, individuals must have the IPs of the machines and the firewall can assist in limiting the traffic.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
