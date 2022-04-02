@@ -108,10 +108,6 @@ SSH into the control node and follow the steps below:
 - Update the **hosts** file to include...
 - ![Cybersecurity/Images](https://github.com/slichtfuss/CybersecurityP1/blob/main/Images/Hosts.png)
 - Run the playbook, and navigate to **http://your_elk_server_ip:5601/app/kibana** to check that the installation worked as expected.
-
-- _Which file is the playbook? Where do you copy it?_
-  **The playbook is install-elk.yml and you copy it to /etc/ansible/roles/install-elk.yml**
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? **The file that needs to be updated is filebeat-config.yml. You specify which machine to install by updating the host file with the ip addresses of web and elk servers and selecting a group to run on.**
- 
-- _Which URL do you navigate to in order to check that the ELK server is running?
-   **http://your_elk_server_ip:5601/app/kibana**
+- **The playbook is install-elk.yml and you copy it to /etc/ansible/roles/install-elk.yml**
+- **The file that needs to be updated is filebeat-config.yml. You specify which machine to install by updating the host file with the ip addresses of web and elk servers and selecting a group to run on.**
+- Navigate to the URL **http://your_elk_server_ip:5601/app/kibana** to check that the ELK server is running.
