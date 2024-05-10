@@ -75,7 +75,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
   - Ansible automation helps considerably with the representation of infrastructure as code (IAC). It allows for full automation of a specific server and reduces configuration errors. 
 
 The playbook implements the following tasks:
--**Install Docker: Installs the core docker code to the remote server** 
+- **Install Docker: Installs the core docker code to the remote server** 
 - **Install Python3_pip: Pip is an installation module to allow additional docker modules to be installed.**
 - **Docker Module: Tells the previous PIP module to install the necessary docker component modules.**
 - **Increase Memory/Use More Memory: This helps fix the limited memory issue of the ELK Docker image.**
